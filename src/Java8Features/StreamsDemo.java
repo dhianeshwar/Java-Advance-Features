@@ -31,10 +31,11 @@ public class StreamsDemo {
         {
             System.out.println(age);
         }
-        Comparator<Student> c=(Student a,Student b)->{
-            return Integer.compare(a.getAge(),b.getAge());
-        };
+        Comparator<Student> c= Comparator.comparingInt(Student::getAge);
         studentList.sort(c);
-        studentList.forEach(System.out::println);
+        studentList.stream()
+                        .map(student -> studentAge)
+                . forEach(System.out::println);
+        System.out.println(studentList);
         }
 }

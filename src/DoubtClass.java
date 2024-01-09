@@ -21,15 +21,28 @@ class Child extends Parent
 }
 
 public class DoubtClass {
+    public static int majorityElement(int[] nums) {
+        int count=0;
+        int a=0;
+        for(int i:nums){
+            if(count==0){
+                a=i;
+            }
+            if(a==i){
+                count++;
+            }
+            else{
+                count--;
+            }
+        }
+        return a;
+    }
     public static void main(String[] args) {
         Child childObject=new Child("message");
         System.out.println(childObject.toString());
-        karupu ref=new karupu() {
-            @Override
-            public void add(int a, int b) {
-                System.out.println(a+b);
-            }
-        };
+        karupu ref=(int a, int b) -> System.out.println(a+b);
         ref.add(5,4);
+        int[] arr={3,4,9,0,0,1,8,9,9,9,9,2,3,3,4,8,15,2};
+        System.out.println(DoubtClass.majorityElement(arr));
     }
 }

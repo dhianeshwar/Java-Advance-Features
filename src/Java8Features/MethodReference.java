@@ -15,6 +15,7 @@ public class MethodReference {
             return num;
         };
         int[] arr = {1, 2, 3};
-        System.out.println(p.findElement(arr, 3));
+        int ans=p.findElement(arr,2);
+        System.out.println(ans);
     }
 }

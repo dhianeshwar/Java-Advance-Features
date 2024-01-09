@@ -30,6 +30,7 @@ public class AllinOne {
         list.add(new StudentDetails("raja",3,30));
         list.add(new StudentDetails("senthil",4,45));
         list.add(new StudentDetails("roshan",5,15));
+
         //---------------------Functional Interface-------------------------------
         //---------------------Method Reference----------------------------
         Comparator<StudentDetails> nameComparator= Comparator.comparing(StudentDetails::getName);
