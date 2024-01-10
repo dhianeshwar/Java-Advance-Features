@@ -34,7 +34,7 @@ public class StreamsDemo {
         Comparator<Student> c= Comparator.comparingInt(Student::getAge);
         studentList.sort(c);
         studentList.stream()
-                        .map(student -> studentAge)
+                        .map(Student::getAge)
                 . forEach(System.out::println);
         System.out.println(studentList);
         }

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.IntStream;
 
 //-----------------------------Lombok--------------------------------------
 @AllArgsConstructor
@@ -41,6 +42,9 @@ public class AllinOne {
         list.forEach(student->student.setRollNo(i.getAndIncrement()));
 
         list.forEach(System.out::println);
+
+        IntStream is=IntStream.of(0,5);
+        is.forEach(System.out::println);
 
     }
 }

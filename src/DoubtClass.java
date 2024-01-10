@@ -39,7 +39,7 @@ public class DoubtClass {
     }
     public static void main(String[] args) {
         Child childObject=new Child("message");
-        System.out.println(childObject.toString());
+        System.out.println(childObject);
         karupu ref=(int a, int b) -> System.out.println(a+b);
         ref.add(5,4);
         int[] arr={3,4,9,0,0,1,8,9,9,9,9,2,3,3,4,8,15,2};
