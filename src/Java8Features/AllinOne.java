@@ -35,7 +35,7 @@ public class AllinOne {
         //---------------------Functional Interface-------------------------------
         //---------------------Method Reference----------------------------
         Comparator<StudentDetails> nameComparator= Comparator.comparing(StudentDetails::getName);
-        list.sort(nameComparator);
+        list.sort( Comparator.comparing(StudentDetails::getName));
 
         //----------------------------Streams-------------------------------------
         AtomicInteger i= new AtomicInteger(1);

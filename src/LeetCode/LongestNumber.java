@@ -1,36 +1,38 @@
 package LeetCode;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class LongestNumber {
-    static int temp=0;
-    static int ans=1;
-    public static int[] large(int[] nums)
+   public static int large(int[] nums)
     {
-        for(int i=0;i<nums.length;i++)
-        {
-            for(int j=i+1;j<nums.length;j++)
-            {
-                if(nums[i]<nums[j])
-                {
-                    temp=nums[i];
-                    nums[i]=nums[j];
-                    nums[j]=temp;
-                }
 
-            }
-        }
+        int ans=0;
+        List<Integer> li=new ArrayList<>();
         for(int num:nums)
         {
-            ans=ans*num;
+            if(num>9)
+            {
+                while(num>0)
+                {
+                    li.add(num%10);
+                    num=num/10;
+                }
+                continue;
+            }
+            li.add(num);
         }
-        System.out.println(ans);
-        return nums;
-    }
+        li.sort(Collections.reverseOrder());
+        for(int num:li)
+        {
+            ans=(ans * 10)+num;
+        }
 
+        System.out.println(li);
+        return  ans;
+    }
     public static void main(String[] args) {
-        int[] nums={9,3,8,5,10};
-        int[] arr=large(nums);
-        System.out.println(Arrays.toString(arr));
+        int[] nums={10,2};
+        int arr=large(nums);
+        System.out.println(arr);
     }
 }
